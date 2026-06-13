@@ -1,0 +1,266 @@
+/* =============================================
+   リセット・ベーススタイル
+   ============================================= */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Helvetica Neue", Arial, "Hiragino Sans", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  background-color: #f0f4f8;
+  color: #333;
+  min-height: 100vh;
+}
+
+/* スクリーンリーダー向け非表示クラス */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* =============================================
+   アプリ全体のレイアウト
+   ============================================= */
+.app-wrapper {
+  max-width: 640px;
+  margin: 40px auto;
+  padding: 0 16px 40px;
+}
+
+/* =============================================
+   ヘッダー
+   ============================================= */
+.app-header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.app-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #2563eb;
+  letter-spacing: 0.05em;
+}
+
+/* =============================================
+   メインエリア
+   ============================================= */
+.app-main {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  padding: 28px 24px;
+}
+
+/* =============================================
+   タスク入力フォーム
+   ============================================= */
+.task-form {
+  margin-bottom: 24px;
+}
+
+.task-form__inner {
+  display: flex;
+  gap: 8px;
+}
+
+.task-form__input {
+  flex: 1;
+  padding: 10px 14px;
+  font-size: 1rem;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.2s;
+  color: #333;
+}
+
+.task-form__input:focus {
+  border-color: #2563eb;
+}
+
+.task-form__input::placeholder {
+  color: #94a3b8;
+}
+
+.task-form__button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ffffff;
+  background-color: #2563eb;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background-color 0.2s;
+}
+
+.task-form__button:hover {
+  background-color: #1d4ed8;
+}
+
+.task-form__button:active {
+  background-color: #1e40af;
+}
+
+/* =============================================
+   フィルターボタン
+   ============================================= */
+.task-filter {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.task-filter__button {
+  padding: 6px 16px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #64748b;
+  background-color: #f1f5f9;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.task-filter__button:hover {
+  background-color: #dbeafe;
+  color: #2563eb;
+  border-color: #93c5fd;
+}
+
+.task-filter__button.is-active {
+  background-color: #2563eb;
+  color: #ffffff;
+  border-color: #2563eb;
+}
+
+/* =============================================
+   タスク一覧
+   ============================================= */
+.task-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* =============================================
+   タスクアイテム
+   ============================================= */
+.task-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 14px 16px;
+  background-color: #f8fafc;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 8px;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+.task-item:hover {
+  background-color: #f1f5f9;
+  border-color: #cbd5e1;
+}
+
+/* 完了済み状態 */
+.task-item.is-completed {
+  background-color: #f8f9fa;
+  border-color: #e9ecef;
+  opacity: 0.75;
+}
+
+/* ラベル（チェックボックス + テキストをまとめる） */
+.task-item__label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+  cursor: pointer;
+}
+
+/* チェックボックス */
+.task-item__checkbox {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  accent-color: #2563eb;
+  cursor: pointer;
+}
+
+/* タスクテキスト */
+.task-item__text {
+  font-size: 1rem;
+  color: #334155;
+}
+
+/* 完了済みのテキスト：打ち消し線 + 薄い色 */
+.task-item.is-completed .task-item__text {
+  text-decoration: line-through;
+  color: #94a3b8;
+}
+
+/* アクションボタンのコンテナ */
+.task-item__actions {
+  display: flex;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+/* 共通ボタンスタイル */
+.task-item__button {
+  padding: 5px 12px;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+/* 編集ボタン */
+.task-item__button--edit {
+  color: #2563eb;
+  background-color: #dbeafe;
+}
+
+.task-item__button--edit:hover {
+  background-color: #bfdbfe;
+}
+
+/* 削除ボタン */
+.task-item__button--delete {
+  color: #dc2626;
+  background-color: #fee2e2;
+}
+
+.task-item__button--delete:hover {
+  background-color: #fecaca;
+}
+
+/* =============================================
+   フッター
+   ============================================= */
+.app-footer {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.app-footer__text {
+  font-size: 0.875rem;
+  color: #94a3b8;
+}
