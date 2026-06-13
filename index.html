@@ -38,53 +38,16 @@
 
       <!-- タスク一覧表示エリア -->
       <section class="task-list-section" aria-label="タスク一覧">
-        <ul class="task-list">
-
-          <!-- タスクアイテム（未完了）：牛乳を買う -->
-          <li class="task-item">
-            <label class="task-item__label">
-              <input class="task-item__checkbox" type="checkbox">
-              <span class="task-item__text">牛乳を買う</span>
-            </label>
-            <div class="task-item__actions">
-              <button class="task-item__button task-item__button--edit" type="button">編集</button>
-              <button class="task-item__button task-item__button--delete" type="button">削除</button>
-            </div>
-          </li>
-
-          <!-- タスクアイテム（完了済み）：部屋を掃除する -->
-          <li class="task-item is-completed">
-            <label class="task-item__label">
-              <input class="task-item__checkbox" type="checkbox" checked>
-              <span class="task-item__text">部屋を掃除する</span>
-            </label>
-            <div class="task-item__actions">
-              <button class="task-item__button task-item__button--edit" type="button">編集</button>
-              <button class="task-item__button task-item__button--delete" type="button">削除</button>
-            </div>
-          </li>
-
-          <!-- タスクアイテム（未完了）：メールを送る -->
-          <li class="task-item">
-            <label class="task-item__label">
-              <input class="task-item__checkbox" type="checkbox">
-              <span class="task-item__text">メールを送る</span>
-            </label>
-            <div class="task-item__actions">
-              <button class="task-item__button task-item__button--edit" type="button">編集</button>
-              <button class="task-item__button task-item__button--delete" type="button">削除</button>
-            </div>
-          </li>
-
-        </ul>
+        <ul id="task-list" class="task-list"></ul>
       </section>
 
     </main>
 
     <footer class="app-footer">
-      <p class="app-footer__text">3件のタスク（完了: 1件 / 未完了: 2件）</p>
+      <p id="footer-text" class="app-footer__text">0件のタスク</p>
     </footer>
 
   </div>
+  <script src="app.js"></script>
 </body>
 </html>
